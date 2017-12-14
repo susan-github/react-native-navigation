@@ -34,4 +34,6 @@ extern const NSInteger TOP_BAR_TRANSPARENT_TAG;
 -(void)mergeWith:(NSDictionary*)otherOptions;
 -(void)storeOriginalTopBarImages:(UIViewController*)viewController;
 
+- (void)applyTabBarItem:(UIViewController*)viewController;
+
 @end

@@ -19,6 +19,7 @@
 			   eventEmitter:(RNNEventEmitter*)eventEmitter;
 
 
--(void) applyNavigationButtons;
+-(void)applyNavigationButtons;
+-(void)applyTabBarItem;
 
 @end

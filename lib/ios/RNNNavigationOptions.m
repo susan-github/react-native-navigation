@@ -212,6 +212,10 @@ const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 		}
 	}
 	
+	[self applyTabBarItem:viewController];
+}
+
+- (void)applyTabBarItem:(UIViewController*)viewController {
 	if (self.tabItem) {
 		[viewController.navigationController setTabBarItem:self.tabItem];
 	}
