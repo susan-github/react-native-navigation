@@ -26,6 +26,7 @@ const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 	self.rightButtons = [navigationOptions objectForKey:@"rightButtons"];
 	self.topBar = [[RNNTopBarOptions alloc] initWithDict:[navigationOptions objectForKey:@"topBar"]];
 	self.bottomTabs = [[RNNTabBarOptions alloc] initWithDict:[navigationOptions objectForKey:@"bottomTabs"]];
+	self.tabItem = [[RNNUITabBarItem alloc] initWithDictionary:[navigationOptions objectForKey:@"tabItem"]];
 	
 	return self;
 }
@@ -36,6 +37,8 @@ const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 			[self.topBar mergeWith:[otherOptions objectForKey:key]];
 		} else if ([key isEqualToString:@"bottomTabs"]) {
 			[self.bottomTabs mergeWith:[otherOptions objectForKey:key]];
+		} else if ([key isEqualToString:@"tabItem"]) {
+			[self.tabItem mergeWith:[otherOptions objectForKey:key]];
 		} else {
 			[self setValue:[otherOptions objectForKey:key] forKey:key];
 		}
@@ -207,6 +210,10 @@ const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 				[curBlurView removeFromSuperview];
 			}
 		}
+	}
+	
+	if (self.tabItem) {
+		[viewController.navigationController setTabBarItem:self.tabItem];
 	}
 }
 
